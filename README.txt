@@ -4,12 +4,13 @@ The folder ascii is full of ascii art that the clock will display above the time
 
 The command to run python3 and start it is in /home/pi/.bash_profile:
 clear
-cd clock 
+cd clock
 python3 clockweather.py
 
 
 Had to edit the /boot/config.txt to get the screen full width.
 Not sure why there is a purple bar on the left.
+TODO: Add config.txt data
 
 To get the pi to update the clock on startup:
 apt-get install ntpdate 
