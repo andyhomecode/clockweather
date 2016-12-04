@@ -22,7 +22,9 @@ wordedForecast = ""
 while True:
 
     # find a random file in the ascii directory, load it, print it
-    asciiart = open("./ascii/"+random.choice(os.listdir("./ascii"))).read()
+    asciiartfile = open("./ascii/"+random.choice(os.listdir("./ascii")))
+    asciiart = asciiartfile.read()
+    asciiartfile.close()
     slowprint(asciiart)
     
     # get the current time
