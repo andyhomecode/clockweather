@@ -6,6 +6,14 @@ import os, random
 from pyfiglet import Figlet
 from datetime import datetime
 
+
+def slowprint(inputstring):
+    """do a quick computer crawl to display it like a line printer"""
+    for line in inputstring.splitlines():
+        time.sleep(.06)
+        print(line.rstrip(), flush=True) 
+
+
 # clear the screen
 print("\033c")
 
@@ -13,24 +21,24 @@ wordedForecast = ""
 
 while True:
 
-    # find a random file in the ascii directory, load the lines
-    asciiartlines = open("./ascii/"+random.choice(os.listdir("./ascii"))).readlines()
-    # and print them on the screen one at a time.
-    for line in asciiartlines:
-        time.sleep(.06)
-        print(line, end="", flush=True)
-
+    # find a random file in the ascii directory, load it, print it
+    asciiart = open("./ascii/"+random.choice(os.listdir("./ascii"))).read()
+    slowprint(asciiart)
+    
     # get the current time
     t = datetime.now().strftime("%I:%M")
 
     # make it big
     f = Figlet(font='roman')
-    bigtime = f.renderText(t).splitlines()
+
+    slowprint(f.renderText(t))
+
+    #bigtime = f.renderText(t).splitlines()
 
     # do a quick computer crawl to display it like a line printer
-    for x in range(0,9):
-        print(bigtime[x])
-        time.sleep(.06)
+    #for x in range(0,9):
+    #    print(bigtime[x])
+    #    time.sleep(.06)
 
     #print("---- LENGTH OF BIGTIME ---")
     #print(len(bigtime))
@@ -114,7 +122,7 @@ while True:
     shortweather = '{0} {3} {1}/{2}'.format(currenttemp, lotemp, hitemp, lastweatherword)
 
     f = Figlet(font='alphabet')
-    print(f.renderText(shortweather))
+    slowprint(f.renderText(shortweather))
 
     # either the most recent forecast
     print(wordedForecast)
