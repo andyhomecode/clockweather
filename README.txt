@@ -1,6 +1,4 @@
-Andy's Amazing Weather Clock. 2016 12 03
-
-xx
+Andy's Amazing Weather Clock. 2017 01 06
 
 The folder ascii is full of ascii art that the clock will display above the time and weather.  Randomly selected.
 
