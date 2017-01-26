@@ -1,6 +1,7 @@
 Andy's Amazing Weather Clock. 2017 01 06
 
-The folder ascii is full of ascii art that the clock will display above the time and weather.  Randomly selected.
+#The folder ascii is full of ascii art that the clock will display above the time and weather.  Randomly selected.
+The file asciiart.txt has all the ascii art in it, separated by <pagebreak>
 
 The command to run python3 and start it is in /home/pi/.bash_profile:
 clear
