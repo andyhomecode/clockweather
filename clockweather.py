@@ -14,6 +14,15 @@ def slowprint(inputstring):
         print(line.rstrip(), flush=True) 
 
 
+print("OPENING ASCII FILE")
+# open the whole ascii art file and load it.
+asciiartfile = open("asciiart.txt")
+asciiart = asciiartfile.read()
+asciiartfile.close()
+# and split it into individual art things
+artsplit = asciiart.split("<pagebreak>")
+
+
 # clear the screen
 print("\033c")
 
@@ -22,10 +31,11 @@ wordedForecast = ""
 while True:
 
     # find a random file in the ascii directory, load it, print it
-    asciiartfile = open("./ascii/"+random.choice(os.listdir("./ascii")))
-    asciiart = asciiartfile.read()
-    asciiartfile.close()
-    slowprint(asciiart)
+    #asciiartfile = open("./ascii/"+random.choice(os.listdir("./ascii")))
+    #asciiart = asciiartfile.read()
+    #asciiartfile.close()
+    #slowprint(asciiart)
+    slowprint(artsplit[random.randint(0, len(artsplit)-1)])
     
     # get the current time
     t = datetime.now().strftime("%I:%M")
